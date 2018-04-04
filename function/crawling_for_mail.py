@@ -193,7 +193,9 @@ def data_to_file(i) :
           
     data_coinone=pd.DataFrame(data_coinone['completeOrders'])
     data_coinone=data_coinone[['timestamp','price','qty']]
-    json_to_file(data_coinone,'coinone',i)
+    filename_c=json_to_file(data_coinone,'coinone',i)
+
+
 
     for a in range(0,10) :
         try :    
@@ -214,9 +216,10 @@ def data_to_file(i) :
     data_kraken=pd.DataFrame(data_kraken['result']['XXBTZUSD'])
     data_kraken=data_kraken[[2,0,1]]
     data_kraken.columns=['timestamp','price','qty']
-    json_to_file(data_kraken,'kraken',i)
-
-
+    
+    filename_k=json_to_file(data_kraken,'kraken',i)
+    
+    return filename_c, filename_k
 def exchange_rate_to_file(exchange_data,i):
     i=str(i)
     exchange_rate=pd.DataFrame(exchange_data)
@@ -227,8 +230,9 @@ def json_to_file(data,coinone,i):
     filename=coinone+i
     data=pd.DataFrame(data)
     data.to_csv('data/'+filename+'.csv')
+    return filename
     #savetohadoop_d(data,filename)
-    savetohadoop(filename)
+    #savetohadoop(filename)
 
 
 

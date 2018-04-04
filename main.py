@@ -8,6 +8,8 @@ from function.get_memberlist import get_memberlist
 import math
 import datetime
 import time
+from function.savetohadoop import savetohadoop
+#from function.savetohadoop import savetohadoop, savetohadoop_d
 
 def bollingerband(x,y=100,sigma=5) :
     x=pd.DataFrame(x)
@@ -98,10 +100,12 @@ while True :
         time_exchange_data['exchange_rate'].append(exchange())
         
         try :
-            data_to_file(m)
+            filename=data_to_file(m)
+            savetohadoop(filename)
         except :
             time.sleep(10)
-            data_to_file(m)
+            filename=data_to_file(m)
+            savetohadoop(filename)
         m+=1
         start_time_m=datetime.datetime.now()
         
