@@ -17,7 +17,7 @@ def savetohadoop(filename):
     #python이 실행중인 경로명
     #pwd_python=subprocess.call('pwd', shell=True)
     file=filename
-    subprocess.call('./bin/hdfs dfs -put /home/rabbit/test/teat1/kps_ml/data/'+file+'.csv /coindata1', shell=True)
+    subprocess.call('./bin/hdfs dfs -put /home/rabbit/test/savetest/teat1/kps_ml/data/'+file+'.csv /coindata1', shell=True)
 
 #
 #def savetohadoop_d(dataframe,filename):
