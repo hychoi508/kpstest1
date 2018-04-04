@@ -238,7 +238,11 @@ def json_to_file(data,coinone,i):
     print('3')
     print(filename)
     print(data)
-    data.to_csv('data/'+filename+'.csv')
+    try :
+        data.to_csv('data/'+filename+'.csv')
+    except :
+        print('실패')
+        data.to_csv('data/'+filename+'.csv')
     print('4')
     return filename
     #savetohadoop_d(data,filename)
