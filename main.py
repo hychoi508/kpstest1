@@ -100,7 +100,9 @@ while True :
         time_exchange_data['exchange_rate'].append(exchange())
         
         try :
+            print(m)
             filename_c,filename_k=data_to_file(m)
+            print(m)
             print('main함수')
             print(filename_c)
             print(filename_k)

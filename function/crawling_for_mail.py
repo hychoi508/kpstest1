@@ -220,6 +220,7 @@ def data_to_file(i) :
     filename_k=json_to_file(data_kraken,'kraken',i)
     
     return filename_c, filename_k
+
 def exchange_rate_to_file(exchange_data,i):
     i=str(i)
     exchange_rate=pd.DataFrame(exchange_data)
