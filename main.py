@@ -101,10 +101,12 @@ while True :
         
         try :
             filename=data_to_file(m)
+            print('main'+filename)
             savetohadoop(filename)
         except :
             time.sleep(10)
             filename=data_to_file(m)
+            print('main'+filename)
             savetohadoop(filename)
         m+=1
         start_time_m=datetime.datetime.now()

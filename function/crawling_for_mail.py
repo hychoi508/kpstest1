@@ -6,7 +6,7 @@ import pandas as pd
 import time
 from bs4 import BeautifulSoup
 from function.mail_func import exchange, premiumFunc, mail
-from function.savetohadoop import savetohadoop
+#from function.savetohadoop import savetohadoop
 #from function.savetohadoop import savetohadoop, savetohadoop_d
   
 def crawling(x='bithumb',y='poloniex') :
