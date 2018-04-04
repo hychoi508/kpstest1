@@ -100,16 +100,20 @@ while True :
         time_exchange_data['exchange_rate'].append(exchange())
         
         try :
-            filename=data_to_file(m)
+            filename_c,filename_k=data_to_file(m)
             print('main함수')
-            print(filename)
-            savetohadoop(filename)
+            print(filename_c)
+            print(filename_k)
+            savetohadoop(filename_c)
+            #savetohadoop(filename_k)
         except :
             time.sleep(10)
-            filename=data_to_file(m)
+            filename_c,filename_k=data_to_file(m)
             print('main함수')
-            print(filename)
-            savetohadoop(filename)
+            print(filename_c)
+            print(filename_k)
+            savetohadoop(filename_c)
+            #savetohadoop(filename_k)
         m+=1
         start_time_m=datetime.datetime.now()
         
