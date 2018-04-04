@@ -237,8 +237,9 @@ def json_to_file(data,coinone,i):
     data=pd.DataFrame(data)
     print('3')
     print(filename)
+    print(data)
     data.to_csv('data/'+filename+'.csv')
-    #print('4')
+    print('4')
     return filename
     #savetohadoop_d(data,filename)
     #savetohadoop(filename)
