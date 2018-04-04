@@ -193,7 +193,10 @@ def data_to_file(i) :
           
     data_coinone=pd.DataFrame(data_coinone['completeOrders'])
     data_coinone=data_coinone[['timestamp','price','qty']]
+    print('data_to_file함수')
+    print(i)
     filename_c=json_to_file(data_coinone,'coinone',i)
+    print('data_to_file함수 after')
 
 
 
@@ -218,7 +221,7 @@ def data_to_file(i) :
     data_kraken.columns=['timestamp','price','qty']
     
     filename_k=json_to_file(data_kraken,'kraken',i)
-    
+    print('data_tofile함수에서 return전')
     return filename_c, filename_k
 
 def exchange_rate_to_file(exchange_data,i):
@@ -228,9 +231,13 @@ def exchange_rate_to_file(exchange_data,i):
     
 def json_to_file(data,coinone,i):
     i=str(i)
+    print('1')
     filename=coinone+i
+    print('2')
     data=pd.DataFrame(data)
+    print('3')
     data.to_csv('data/'+filename+'.csv')
+    print('4')
     return filename
     #savetohadoop_d(data,filename)
     #savetohadoop(filename)
